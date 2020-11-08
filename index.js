@@ -3,7 +3,7 @@ const body_parser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(body_parser.urlencoded({ extended: true }));
 
 app.post('/_jsonPost', (req, res) => {
     console.log(req.body);
