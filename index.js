@@ -5,7 +5,8 @@ const app = express();
 app.use(express.json());
 
 app.post('/_jsonPost', (req, res) => {
-    res.json(req.body);
+    console.log(req.body)
+    res.sendStatus(200)
 });
 
 app.listen(process.env.PORT || 7000);
