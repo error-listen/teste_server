@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-app.post('/', (req, res) => {
+app.post('/_jsonPost', (req, res) => {
     res.json("It's Work");
 });
 
