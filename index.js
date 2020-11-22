@@ -8,7 +8,7 @@ app.use(express.json());
 
 let date = [];
 
-app.post('/date_json', (req, res) => {
+app.post('/_jsonPost', (req, res) => {
     date.push(req.body);
     res.sendStatus(200);
 });
