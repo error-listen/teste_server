@@ -1,14 +1,21 @@
 const express = require('express');
-const body_parser = require('body-parser');
+const cors = require('cors');
 
 const app = express();
 
-app.use(body_parser.urlencoded({ extended: true }));
+app.use(cors());
 app.use(express.json());
 
-app.post('/_jsonPost', (req, res) => {
-    console.log(req.body);
+let date = [];
+
+app.post('/date_json', (req, res) => {
+    date.push(req.body);
     res.sendStatus(200);
+});
+
+app.get('/get_date', (req, res) => {
+    console.log(date);
+    res.json(date);
 });
 
 app.listen(process.env.PORT || 7000);
